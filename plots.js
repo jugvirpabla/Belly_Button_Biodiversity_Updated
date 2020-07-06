@@ -37,7 +37,6 @@ function buildMetadata(sample) {
     var result = resultArray[0];
     var PANEL = d3.select("#sample-metadata");
 
-
     Object.entries(result).forEach(([key, value]) => {
 
       metadata = metadata.filter(row => row[key] === value);
@@ -70,17 +69,18 @@ function buildCharts(sample) {
     console.log(sampleIds);
     console.log(sampleOtu);
     console.log(sampleValues);
-    console.log(topTenSample);
+    console.log(topSample);
     
     //slicing for top 10 
-    var topTenSample = sampleValues.slice(0,10);
-    var topTenIds = sampleIds.slice(0,10).map(id => "OTU"+id.toString());
-    var toptenOtu = sampleOtu.slice(0,10);
+    var topSample = sampleValues.slice(0,10);
+    var topIds = sampleIds.slice(0,10).map(id => "OTU"+id.toString());
+    var topOtu = sampleOtu.slice(0,10);
+    
     
     var trace = {
-      x: topTenSample,
-      y: topTenIds,
-      text: toptenOtu,
+      x: topSample,
+      y: topIds,
+      text: topOtu,
       orientation: 'h',
       type: "bar"
     };
@@ -93,7 +93,6 @@ function buildCharts(sample) {
 
 });}
 
-// create a bubble chart
 function buildBubble(sample) {
   d3.json("samples.json").then((data) => {
     var samples = data.samples;
