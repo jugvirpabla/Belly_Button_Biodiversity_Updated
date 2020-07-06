@@ -41,7 +41,7 @@ function buildMetadata(sample) {
 
       metadata = metadata.filter(row => row[key] === value);
     });
-    //Javascript syntax for .text function 
+     
     PANEL.html("");  
       Object.entries(result).forEach(function([filtering,value]){
         PANEL.append("h6").text(`${filtering}: ${value}`);});
@@ -60,8 +60,7 @@ function buildCharts(sample) {
     Object.entries(sampleResult).forEach(([key, value]) => {
 
       samples = samples.filter(row => row[key] === value);
-
-    //fetches the data from the samples dataset 
+    
     var sampleIds = sampleResult.otu_ids;
     var sampleOtu = sampleResult.otu_labels;
     var sampleValues = sampleResult.sample_values;
@@ -71,11 +70,9 @@ function buildCharts(sample) {
     console.log(sampleValues);
     console.log(topSample);
     
-    //slicing for top 10 
     var topSample = sampleValues.slice(0,10);
     var topIds = sampleIds.slice(0,10).map(id => "OTU"+id.toString());
     var topOtu = sampleOtu.slice(0,10);
-    
     
     var trace = {
       x: topSample,
@@ -93,6 +90,7 @@ function buildCharts(sample) {
 
 });}
 
+// create bubble chart
 function buildBubble(sample) {
   d3.json("samples.json").then((data) => {
     var samples = data.samples;
@@ -118,9 +116,7 @@ function buildBubble(sample) {
     
     var layout = {
        title: 'Distrubution of Bellybutton Bacteria',
-       //showlegend: false,
-       //height: 600,
-       //width: 600
+  
      };
     
      Plotly.newPlot("bubble", bubbledata, layout);
