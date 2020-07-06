@@ -9,7 +9,7 @@ The resources provided by GitHib were used to host the files for anyone to view.
  - Software: VS Code, Google Chrome
  
 ## Screenshot
-![Screenshot](https://github.com/jugvirpabla/Belly_Button_Biodiversity/blob/master/screenshot.png)
+![Screenshot](https://github.com/jugvirpabla/Belly_Button_Biodiversity_Updated/blob/master/screenshot.PNG)
 
 ## Portfolio Link
 https://jugvirpabla.github.io/Belly_Button_Biodiversity_Updated/
